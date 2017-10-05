@@ -114,7 +114,7 @@ aside {
 
 
 blockquote {
-    background: #fff;
+    background: #eeeeee;
     margin: 0;
     padding: 10px;
     border-top-left-radius: 5px;
@@ -132,7 +132,7 @@ blockquote {
 
 .shadowblock {
     box-shadow: 0px 5px 10px 0px #e0e0e0;
-    margin-top: 15pxpx;
+    margin-top: 15px;
     margin-bottom: 15px;
 }
 

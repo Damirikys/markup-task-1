@@ -167,7 +167,20 @@
                 ресурса актуальной версии, чтобы потом можно было проверить правильность
                 наложения патча на клиенте. Чексумма вычисляется по алгоритму Флетчера.
             </p>
-
+            <div class="code">
+                <code>
+                    Дано: <strong>&epsilon;</strong>, <var>x<sub>0</sub></var><br>
+                    инициализировать <strong><var>H<sub>0</sub></var></strong><br>
+                    <strong><var>k</var> = 0</strong><br>
+                    <strong>while ||&#9661;f<sub>k</sub>|| > &epsilon;</strong><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;найти направление <var>p<sub>k</sub></var> = -<var>C<sub>k</sub></var>&#9661;<var>f<sub>k</sub></var><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;вычислить <var>x<sub>k+1</sub></var> = <var>x<sub>k</sub></var> + <var>&alpha;<sub>k</sub></var><var>p<sub>k</sub></var>, <var>&alpha;<sub>k</sub></var> удовлетворяет условиям Вольфе<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;обозначить <var>s<sub>k</sub></var> = <var>x<sub>k+1</sub></var> - <var>x<sub>k</sub></var> и <var>y<sub>k</sub></var> = &#9661;<var>f<sub>k+1</sub></var> - &#9661;<var>f<sub>k</sub></var><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;вычислить <var>C<sub>k+1</sub></var><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<var>k</var> = <var>k</var> + 1<br>
+                    <strong>end</strong>
+                </code>
+            </div>
             <p>
                 Алгоритм Бройдена — Флетчера — Гольдфарба — Шанно (<abbr>BFGS</abbr>)
                 — итерационный метод численной оптимизации, предназначенный для
