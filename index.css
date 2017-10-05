@@ -1,0 +1,149 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: "Trebuchet MS";
+    font-size: 14px;
+    color: #4f4f4f;
+    background:#f7f7f7;
+}
+
+main {
+    padding: 24px;
+    background: #fff;
+    width:40%;
+    height: 100%;
+    box-shadow: 0px 0px 10px 2px #e6e6e6;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-size: 24px;
+    color: #000;
+    font-family:"Arial Narrow";
+}
+
+h2 {
+    font-size: 16px;
+    border-bottom: 1px solid #dedede;
+    padding: 8px;
+    color: #7e0002;
+}
+
+h3 {
+    font-size: 14px;
+}
+
+p {
+    text-indent: 24px;
+}
+
+code {
+    font-family: Consolas;
+    color: #e9f1cb;
+    font-size: 12px;
+}
+
+.code {
+    background: #7d7d7d;
+    padding: 12px;
+    box-shadow:inset 2px 2px 2px 2px #5f5f5f;
+    text-shadow: 1px 1px 2px #393939;
+}
+
+span {
+    color: #ebebeb;
+    font-family: monospace;
+    background: rgba(0, 0, 0, 0.51);
+    padding: 0px 5px 0px 5px;
+}
+
+table {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 14px;
+    border-radius: 10px;
+    border-spacing: 0;
+    text-align: center;
+    width: 100%;
+}
+th {
+    background: #BCEBDD;
+    color: white;
+    text-shadow: 0 1px 1px #2D2020;
+    padding: 10px 20px;
+}
+th, td {
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    border-color: white;
+}
+th:first-child, td:first-child {
+    text-align: left;
+}
+th:first-child {
+    border-top-left-radius: 10px;
+}
+th:last-child {
+    border-top-right-radius: 10px;
+    border-right: none;
+}
+td {
+    padding: 10px 20px;
+    background: #e3e6df;
+}
+tr:last-child td:first-child {
+    border-radius: 0 0 0 10px;
+}
+tr:last-child td:last-child {
+    border-radius: 0 0 10px 0;
+}
+tr td:last-child {
+    border-right: none;
+}
+
+hr {
+    margin-top:20px;
+    margin-bottom:20px;
+    background: #dedede;
+    border: none;
+    height:1px;
+}
+
+aside {
+    text-align: left;
+}
+
+
+blockquote {
+    background: #fff;
+    margin: 0;
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.author {
+    text-align: right;
+    background: #dcdcdc;
+    padding:10px;
+    font-size: 11px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.shadowblock {
+    box-shadow: 0px 5px 10px 0px #e0e0e0;
+    margin-top: 15pxpx;
+    margin-bottom: 15px;
+}
+
+.shadowblock:hover {
+    box-shadow: 0px 0px 0px 0px #e0e0e0;
+}
+
+footer {
+    margin-top: 30px;
+    padding: 16px;
+    border-top: 1px dashed #dcdcdc;
+    text-align: right;
+    color: #888888;
+}
