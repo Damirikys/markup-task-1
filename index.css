@@ -1,149 +1,209 @@
-html, body {
+html,
+body 
+{
     margin: 0;
     padding: 0;
-    font-family: "Trebuchet MS";
+    font-family: 'Trebuchet MS';
     font-size: 14px;
     color: #4f4f4f;
-    background:#f7f7f7;
+    background: #f7f7f7;
 }
 
-main {
+main 
+{
     padding: 24px;
     background: #fff;
-    width:40%;
+    width: 550px;
     height: 100%;
-    box-shadow: 0px 0px 10px 2px #e6e6e6;
+    margin-top: -170px;
+    box-shadow: 0 0 10px 2px rgb(200, 200, 200);
 }
 
-h1 {
+.letter
+{
+    color: red;
+}
+
+h2.comment
+{
+    margin-top: 26px;
+}
+
+header 
+{
+    background: url('http://www.niceimage.ru/pic/201304/1920x1080/niceimage.ru-6244.jpg') 50%;
+    width: auto;
+    height: 250px;
+    margin: 0;
+    padding: 24px;
+    background-position-x: 150px;
+    background-size: cover;
+    box-shadow: inset 300px 0 500px 10px rgb(0, 0, 0);
+}
+
+h1 
+{
     text-transform: uppercase;
-    font-size: 24px;
-    color: #000;
-    font-family:"Arial Narrow";
+    font-size: 38px;
+    color: rgb(255, 255, 255);
+    font-family: 'Arial Narrow';
 }
 
-h2 {
+h2 
+{
     font-size: 16px;
     border-bottom: 1px solid #dedede;
     padding: 8px;
     color: #7e0002;
 }
 
-h3 {
+h3 
+{
     font-size: 14px;
 }
 
-p {
+p 
+{
     text-indent: 24px;
 }
 
-code {
+code 
+{
     font-family: Consolas;
     color: #e9f1cb;
     font-size: 12px;
 }
 
-.code {
+.code 
+{
     background: #7d7d7d;
     padding: 12px;
-    box-shadow:inset 2px 2px 2px 2px #5f5f5f;
+    box-shadow: inset 2px 2px 2px 2px #5f5f5f;
     text-shadow: 1px 1px 2px #393939;
 }
 
-span {
+span.code 
+{
     color: #ebebeb;
     font-family: monospace;
-    background: rgba(0, 0, 0, 0.51);
-    padding: 0px 5px 0px 5px;
+    background: rgb(0, 0, 0);
+    padding: 0 5px;
 }
 
-table {
-    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+table 
+{
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
     font-size: 14px;
     border-radius: 10px;
     border-spacing: 0;
     text-align: center;
     width: 100%;
 }
-th {
-    background: #BCEBDD;
+
+th 
+{
+    background: #bcebdd;
     color: white;
-    text-shadow: 0 1px 1px #2D2020;
+    text-shadow: 0 1px 1px #2d2020;
     padding: 10px 20px;
 }
-th, td {
+
+th,
+td 
+{
     border-style: solid;
     border-width: 0 1px 1px 0;
     border-color: white;
 }
-th:first-child, td:first-child {
+
+th:first-child,
+td:first-child
+{
     text-align: left;
 }
-th:first-child {
+
+th:first-child
+{
     border-top-left-radius: 10px;
 }
-th:last-child {
+
+th:last-child
+{
     border-top-right-radius: 10px;
     border-right: none;
 }
-td {
+
+td
+{
     padding: 10px 20px;
     background: #e3e6df;
 }
-tr:last-child td:first-child {
+
+tr:last-child td:first-child 
+{
     border-radius: 0 0 0 10px;
 }
-tr:last-child td:last-child {
-    border-radius: 0 0 10px 0;
+
+tr:last-child td:last-child
+{
+    border-radius: 0 0 10px;
 }
-tr td:last-child {
+
+tr td:last-child
+{
     border-right: none;
 }
 
-hr {
-    margin-top:20px;
-    margin-bottom:20px;
+hr
+{
+    margin-top: 20px;
+    margin-bottom: 20px;
     background: #dedede;
     border: none;
-    height:1px;
+    height: 1px;
 }
 
-aside {
+aside
+{
     text-align: left;
 }
 
-
-blockquote {
-    background: #eeeeee;
+blockquote
+{
+    background: #eee;
     margin: 0;
     padding: 10px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
 
-.author {
+.author
+{
     text-align: right;
     background: #dcdcdc;
-    padding:10px;
+    padding: 10px;
     font-size: 11px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
 
-.shadowblock {
-    box-shadow: 0px 5px 10px 0px #e0e0e0;
+.shadowblock
+{
+    box-shadow: 0 5px 10px 0 #e0e0e0;
     margin-top: 15px;
     margin-bottom: 15px;
 }
 
-.shadowblock:hover {
-    box-shadow: 0px 0px 0px 0px #e0e0e0;
+.shadowblock:hover
+{
+    box-shadow: 0 0 0 0 #e0e0e0;
 }
 
-footer {
+footer
+{
     margin-top: 30px;
     padding: 16px;
     border-top: 1px dashed #dcdcdc;
     text-align: right;
-    color: #888888;
+    color: #888;
 }

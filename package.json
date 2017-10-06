@@ -5,6 +5,7 @@
     "lint": "stylelint *.css **/*.css && html-validator --file index.html --verbose && htmllint *.html"
   },
   "dependencies": {
+    "eslint": "4.8.0",
     "html-tests": "latest",
     "html-validator-cli": "3.0.2",
     "htmllint-cli-alpha": "0.0.6",

@@ -1,19 +1,22 @@
 <!DOCTYPE html>
-<html lang="ru" xmlns="http://www.w3.org/1999/html">
+<html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8">
     <title>Задача «TXT2HTML»</title>
     <link href="index.css" rel="stylesheet">
 </head>
 <body>
+<header>
+        <h1>Блог компании <q><span class="letter">Я</span>ндекс</q></h1>        
+</header>
 <main>
-    <h1>Блог компании <font style="color: red;">Я</font>ндекс.</h1>
     <section>
-        <h2>ЯНДЕКС.ПОЧТА: КАК МЫ ИЗМЕРЯЕМ СКОРОСТЬ ЗАГРУЗКИ И УЛУЧШАЕМ ЕЁ</h2>
+        <h2>ЯНДЕКС.ПОЧТА: КАК МЫ ИЗМЕРЯЕМ СКОРОСТЬ ЗАГРУЗКИ И УЛУЧШАЕМ ЕЁ</h2>                    
         <article>
+            <h3>Введение</h3>
             <p>Если ваш сайт медленно грузится, вы рискуете тем, что люди не оценят ни то,
             какой он красивый, ни то, какой он удобный. Никому не понравится, когда все
-            тормозит. Мы регулярно добавляем в <b>Яндекс.Почту</b> новую функциональность,
+            тормозит. Мы регулярно добавляем в <strong>Яндекс.Почту</strong> новую функциональность,
             иногда — исправляем ошибки, а это значит, у нас постоянно появляются новый код и новая логика.
                 Всё это напрямую влияет на скорость работы интерфейса.</p>
         </article>
@@ -34,13 +37,14 @@
                 <li>шаблонизация;</li>
                 <li>обновление DOM.</li>
             </ul>
-            — <i><q>Ок, теперь у нас есть метрики, мы можем отправить их на сервер</q></i> - говорим мы<br \>
-            — <i><q>Что же дальше?</q></i> - вопрошаете вы<br \>
-            — <i><q>А давай построим график!</q></i> - отвечаем мы<br \>
-            — <i><q>А что будем считать?</q></i> - уточняете вы
+            — <em><q>Ок, теперь у нас есть метрики, мы можем отправить их на сервер</q></em> - говорим мы<br>
+            — <em><q>Что же дальше?</q></em> - вопрошаете вы<br>
+            — <em><q>А давай построим график!</q></em> - отвечаем мы<br>
+            — <em><q>А что будем считать?</q></em> - уточняете вы
             <p>
-                Как вы знаете, медиана – это <mark>серединное</mark>, а не <s>среднее</s> значение в выборке.
-                Если у нас имеются числа <em>1, 2, 2, 3, 8, 10, 20</em>, то медиана – <b>3</b>, а среднее – <b>6,5</b>.
+                Как вы знаете, медиана – это <mark>серединное</mark>, а не среднее значение в выборке.
+                Если у нас имеются числа <em>1, 2, 2, 3, 8, 10, 20</em>, то медиана – <strong>3</strong>,
+                 а среднее – <strong>6,5</strong>.
                 В общем случае медиана отлично показывает, сколько грузится средний пользователь.
             </p>
             <p>
@@ -56,13 +60,13 @@
                 но уже не настолько счастлив. И применяем формулу:
             </p>
             <p>
-                <u>(кол-во счастливых пользователей + кол-во удовлетворенных / 2) / (кол-во всех)</u>.
+                <ins>(кол-во счастливых пользователей + кол-во удовлетворенных / 2) / (кол-во всех)</ins>.
                 Получается значение от нуля до единицы, которое, видимо, лучше всего показывает,
                 хорошо или плохо работает почта.
             </p>
         </article>
-        <h2>Как мы измеряем</h2>
         <article>
+            <h2>Как мы измеряем</h2>        
             <p>
                 Сейчас модуль обновления сам логирует все свои стадии, и можно легко понять
                 причину замедления: медленнее стал отвечать сервер либо слишком долго
@@ -70,24 +74,27 @@
             </p>
             <div class="code">
                 <code>
-                    this.timings['look-ma-im-start'] = Date.now();<br />
+                    this.timings['look-ma-im-start'] = Date.now();<br>
                     this.timings['look-ma-finish'] = Date.now();
                 </code>
             </div>
             <p>
-                C помощью <span>Date.now()</span> мы получаем текущее время. Все тайминги собираются и при
-                отправке рассчитываются. На этапах разница между <samp>“end”</samp> и <samp>“start”</samp> не считается,
-                а все вычисления производятся в конце:
+                C помощью <span class="code">Date.now()</span> мы получаем текущее время. Все тайминги 
+                собираются и при отправке рассчитываются. На этапах разница между <samp>“end”</samp> и 
+                <samp>“start”</samp> не считается, а все вычисления производятся в конце:
             </p>
             <div class="code">
                 <code>
                     var totalTime = this.timings['look-ma-finish'] - this.timings['look-ma-im-start'];
                 </code>
             </div>
-            <p>И на сервер прилетают подобные записи: <span>serverResponse=50&domUpdate=60</span></p>
+            <p>
+                И на сервер прилетают подобные записи: 
+                <span class="code">serverResponse=50&amp;domUpdate=60</span>
+            </p>
         </article>
-        <h2>Как мы ускоряем</h2>
         <article>
+            <h2>Как мы ускоряем</h2>        
             <p>
                 Чтобы снизить время загрузки почты при выходе новых версий,
                 мы уже делаем следующее:
@@ -105,7 +112,8 @@
             </p>
             <p>
                 На самое деле эта идея не нова. Уже существуют стандарты для <samp>HTTP</samp> — например,
-                <samp>RFC 3229 <q>Delta encoding in HTTP</q></samp> и <samp><q>Google SDHC</q></samp>, — но по разным причинам они
+                <samp>RFC 3229 <q>Delta encoding in HTTP</q></samp> и <samp><q>Google SDHC</q></samp>,
+                 — но по разным причинам они
                 не получили должного распространения в браузерах и на серверах.
             </p>
             <p>
@@ -143,8 +151,8 @@
                 Формат файла с патчами для проекта выглядит так:
             </p>
             <div class="code">
-                <code>
-                    <xmp>
+                <pre>
+                    <code>
 [
     {
         "k": "jane.css",
@@ -157,8 +165,8 @@
         "s": 4554
     }
 ]
-                    </xmp>
-                </code>
+                    </code>
+                </pre>
             </div>
             <p>
                 То есть это обычный массив из объектов. Каждый объект — отдельный ресурс. У
@@ -172,10 +180,15 @@
                     Дано: <strong>&epsilon;</strong>, <var>x<sub>0</sub></var><br>
                     инициализировать <strong><var>H<sub>0</sub></var></strong><br>
                     <strong><var>k</var> = 0</strong><br>
-                    <strong>while ||&#9661;f<sub>k</sub>|| > &epsilon;</strong><br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;найти направление <var>p<sub>k</sub></var> = -<var>C<sub>k</sub></var>&#9661;<var>f<sub>k</sub></var><br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;вычислить <var>x<sub>k+1</sub></var> = <var>x<sub>k</sub></var> + <var>&alpha;<sub>k</sub></var><var>p<sub>k</sub></var>, <var>&alpha;<sub>k</sub></var> удовлетворяет условиям Вольфе<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;обозначить <var>s<sub>k</sub></var> = <var>x<sub>k+1</sub></var> - <var>x<sub>k</sub></var> и <var>y<sub>k</sub></var> = &#9661;<var>f<sub>k+1</sub></var> - &#9661;<var>f<sub>k</sub></var><br>
+                    <strong>while ||&#9661;f<sub>k</sub>|| &gt; &epsilon;</strong><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;найти направление <var>p<sub>k</sub></var> = -<var>C<sub>k</sub>
+                    </var>&#9661;<var>f<sub>k</sub></var><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;вычислить <var>x<sub>k+1</sub></var> = <var>x<sub>k</sub></var>
+                     + <var>&alpha;<sub>k</sub></var><var>p<sub>k</sub></var>, <var>&alpha;<sub>k</sub></var>
+                     удовлетворяет условиям Вольфе<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;обозначить <var>s<sub>k</sub></var> = <var>x<sub>k+1</sub></var>
+                     - <var>x<sub>k</sub></var> и <var>y<sub>k</sub></var> = &#9661;<var>f<sub>k+1</sub>
+                    </var> - &#9661;<var>f<sub>k</sub></var><br>
                     &nbsp;&nbsp;&nbsp;&nbsp;вычислить <var>C<sub>k+1</sub></var><br>
                     &nbsp;&nbsp;&nbsp;&nbsp;<var>k</var> = <var>k</var> + 1<br>
                     <strong>end</strong>
@@ -189,18 +202,17 @@
             </p>
             <p>
                 Почему именно алгоритм Флетчера, а не другие популярные алгоритмы вроде:
-                <span>CRC16/32</span> - алгоритм нахождения контрольной суммы, предназначенный для проверки
-                целостности данных;
-                <span>md5</span> - 128-битный алгоритм хеширования. Предназначен для создания «отпечатков»
-                или дайджестов сообщения произвольной длины и последующей проверки
-                их подлинности.
+                <span class="code">CRC16/32</span> - алгоритм нахождения контрольной суммы, предназначенный
+                 для проверки целостности данных; <span class="code">md5</span> - 128-битный алгоритм
+                  хеширования. Предназначен для создания «отпечатков» или дайджестов сообщения
+                   произвольной длины и последующей проверки их подлинности.
             </p>
             <p>
                 <mark>Потому что он быстрый, компактный и легок в реализации.</mark>
             </p>
         </article>
-        <h2>Итог</h2>
         <article>
+            <h2>Итог</h2>        
             <p>Фактически мы экономим 80-90% трафика. Размер загружаемой статитки в байтах:</p>
             <table>
                 <tr>
@@ -225,19 +237,20 @@
         </article>
         <hr>
         <aside>
-            <b>Автор:</b> @doochik<br>
-            <i>С++ разработчик</i><br>
-            <b>Электронная почта:</b> (<a href="mailto:doochik@yandex-team.ru">doochik@yandex-team.ru</a>)<br>
-            <b>Компания:</b> <b style="color:red">Я</b>ндекс
+            <strong>Автор:</strong> @doochik<br>
+            <em>С++ разработчик</em><br>
+            <strong>Электронная почта:</strong>
+             (<a href="mailto:doochik@yandex-team.ru">doochik@yandex-team.ru</a>)<br>
+            <strong>Компания:</strong> <span class="letter">Я</span>ндекс
         </aside>
     </section>
-    <h2 style="margin-top: 26px">Комментарии (3):</h2>
     <section>
+    <h2 class="comment">Комментарии (3):</h2>    
         <div class="shadowblock">
             <blockquote>
                 А можете привести сравнение, на сколько быстрее грузится lite версия?
             </blockquote>
-            <div class="author">- Mogaika (mogaika@yandex-team.ru) 30 ноября 2014 в 17:05 </div>
+            <div class="author">- Mogaika (mogaika@yandex-team.ru) 30 ноября 2014 в 17:05</div>
         </div>
         <div class="shadowblock">
             <blockquote>
